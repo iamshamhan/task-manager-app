@@ -3,90 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Task Manager App - Your tasks dashboard"
-    />
+    <meta name="description" content="Task Manager App - Dashboard" />
     <title>Task Manager | Dashboard</title>
     <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body>
-    <!-- Header -->
     <header class="app-header">
-      <div class="app-header__left">
-        <button
-          class="sidebar-toggle"
-          id="sidebar-toggle"
-          aria-label="Toggle sidebar"
-        >
+      <div class="header-left">
+        <button class="menu-btn" id="sidebarToggle" aria-label="Toggle sidebar">
           ☰
         </button>
-        <div class="app-header__logo">
-          <span class="app-header__icon">✓</span>
-          <span class="app-header__title">TaskManager</span>
+        <div class="logo-div">
+          <span class="logo-icon">✓</span>
+          <span class="app-name">TaskManager</span>
         </div>
       </div>
 
-      <div class="app-header__center">
-        <div class="search-bar">
-          <span class="search-bar__icon">🔍</span>
+      <div class="header-mid">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
           <input
             type="search"
-            id="search-input"
-            class="search-bar__input"
+            id="searchInput"
+            class="search-input"
             placeholder="Search tasks..."
             aria-label="Search tasks"
           />
         </div>
       </div>
 
-      <div class="app-header__right">
-        <!-- Dark Mode Toggle -->
-        <button
-          class="icon-btn"
-          id="dark-mode-toggle"
-          aria-label="Toggle dark mode"
-        >
+      <div class="header-right">
+        <button class="icon-btn" id="darkModeBtn" aria-label="Toggle dark mode">
           🌙
         </button>
 
-        <!-- Notifications -->
-        <button
-          class="icon-btn"
-          id="notifications-btn"
-          aria-label="Notifications"
-        >
+        <button class="icon-btn" id="notifBtn" aria-label="Notifications">
           🔔
-          <span class="badge" id="overdue-badge">0</span>
+          <span class="notif-badge" id="overdueBadge">0</span>
         </button>
 
-        <!-- User Menu -->
-        <div class="user-menu" id="user-menu">
-          <button
-            class="user-menu__trigger"
-            id="user-menu-trigger"
-            aria-expanded="false"
-          >
-            <span class="user-avatar" id="user-avatar">U</span>
-            <span class="user-name" id="user-name">User</span>
+        <div class="user-menu" id="userMenu">
+          <button class="user-btn" id="userMenuBtn" aria-expanded="false">
+            <span class="user-avatar" id="userAvatar">U</span>
+            <span class="user-name" id="userName">User</span>
             <span>▾</span>
           </button>
-          <div
-            class="user-menu__dropdown"
-            id="user-dropdown"
-            aria-hidden="true"
-          >
-            <a href="#" class="user-menu__item" id="go-to-profile"
-              >👤 Profile</a
-            >
-            <a href="#" class="user-menu__item" id="go-to-stats"
-              >📊 Statistics</a
-            >
-            <hr class="user-menu__divider" />
-            <button
-              class="user-menu__item user-menu__item--danger"
-              id="logout-btn"
-            >
+          <div class="user-dropdown" id="userDropdown" aria-hidden="true">
+            <a href="#" class="drop-item" id="goProfile">👤 Profile</a>
+            <a href="#" class="drop-item" id="goStats">📊 Statistics</a>
+            <hr class="drop-divider" />
+            <button class="drop-item danger-item" id="logoutBtn">
               🚪 Logout
             </button>
           </div>
@@ -94,60 +60,50 @@
       </div>
     </header>
 
-    <!-- App Body -->
     <div class="app-body">
-      <!-- Sidebar -->
-      <aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
-        <!-- Add Task Button -->
-        <button class="btn btn--primary btn--full" id="add-task-btn">
-          + Add Task
-        </button>
+      <aside class="sidebar" id="sidebar" aria-label="Sidebar">
+        <button class="add-task-btn" id="addTaskBtn">+ Add Task</button>
 
-        <!-- Task Summary -->
-        <div class="sidebar-summary">
-          <div class="summary-item">
-            <span class="summary-item__label">All Tasks</span>
-            <span class="summary-item__count" id="count-all">0</span>
+        <div class="task-summary">
+          <div class="summary-row">
+            <span class="summary-label">All Tasks</span>
+            <span class="summary-num" id="countAll">0</span>
           </div>
-          <div class="summary-item">
-            <span class="summary-item__label">In Progress</span>
-            <span class="summary-item__count" id="count-inprogress">0</span>
+          <div class="summary-row">
+            <span class="summary-label">In Progress</span>
+            <span class="summary-num" id="countProgress">0</span>
           </div>
-          <div class="summary-item">
-            <span class="summary-item__label">Completed</span>
-            <span class="summary-item__count" id="count-completed">0</span>
+          <div class="summary-row">
+            <span class="summary-label">Completed</span>
+            <span class="summary-num" id="countDone">0</span>
           </div>
-          <div class="summary-item summary-item--danger">
-            <span class="summary-item__label">Overdue</span>
-            <span class="summary-item__count" id="count-overdue">0</span>
+          <div class="summary-row overdue-row">
+            <span class="summary-label">Overdue</span>
+            <span class="summary-num" id="countOverdue">0</span>
           </div>
         </div>
 
-        <!-- Categories -->
-        <div class="sidebar-section">
-          <div class="sidebar-section__header">
-            <h3 class="sidebar-section__title">Categories</h3>
+        <div class="side-section">
+          <div class="side-section-top">
+            <h3 class="side-title">Categories</h3>
             <button
-              class="sidebar-section__add"
-              id="add-category-btn"
+              class="add-cat-btn"
+              id="addCatBtn"
               aria-label="Add category"
             >
               +
             </button>
           </div>
-          <ul class="category-list" id="category-list" aria-label="Categories">
-            <!-- Populated by JS -->
+          <ul class="cat-list" id="catList" aria-label="Categories">
+            <!-- filled by js -->
           </ul>
         </div>
 
-        <!-- Filters -->
-        <div class="sidebar-section">
-          <h3 class="sidebar-section__title">Priority</h3>
-          <ul class="filter-list" id="priority-filter">
+        <div class="side-section">
+          <h3 class="side-title">Priority</h3>
+          <ul class="filter-list" id="priorityFilter">
             <li>
-              <button class="filter-btn filter-btn--active" data-priority="all">
-                All
-              </button>
+              <button class="filter-btn active" data-priority="all">All</button>
             </li>
             <li>
               <button class="filter-btn" data-priority="high">🔴 High</button>
@@ -163,14 +119,11 @@
           </ul>
         </div>
 
-        <!-- Status Filter -->
-        <div class="sidebar-section">
-          <h3 class="sidebar-section__title">Status</h3>
-          <ul class="filter-list" id="status-filter">
+        <div class="side-section">
+          <h3 class="side-title">Status</h3>
+          <ul class="filter-list" id="statusFilter">
             <li>
-              <button class="filter-btn filter-btn--active" data-status="all">
-                All
-              </button>
+              <button class="filter-btn active" data-status="all">All</button>
             </li>
             <li>
               <button class="filter-btn" data-status="todo">📋 Todo</button>
@@ -188,58 +141,34 @@
           </ul>
         </div>
 
-        <!-- Due Date Filter -->
-        <div class="sidebar-section">
-          <h3 class="sidebar-section__title">Due Date</h3>
+        <div class="side-section">
+          <h3 class="side-title">Due Date</h3>
           <div class="date-filter">
-            <label for="date-from" class="form-label">From</label>
-            <input
-              type="date"
-              id="date-from"
-              class="form-input form-input--sm"
-            />
-            <label for="date-to" class="form-label">To</label>
-            <input type="date" id="date-to" class="form-input form-input--sm" />
-            <button class="btn btn--secondary btn--full" id="apply-date-filter">
-              Apply
-            </button>
-            <button class="btn btn--ghost btn--full" id="clear-date-filter">
-              Clear
-            </button>
+            <label for="dateFrom" class="input-label">From</label>
+            <input type="date" id="dateFrom" class="input-field small-input" />
+            <label for="dateTo" class="input-label">To</label>
+            <input type="date" id="dateTo" class="input-field small-input" />
+            <button class="sec-btn full-btn" id="applyDateBtn">Apply</button>
+            <button class="ghost-btn full-btn" id="clearDateBtn">Clear</button>
           </div>
         </div>
 
-        <!-- Data Management -->
-        <div class="sidebar-section">
-          <h3 class="sidebar-section__title">Data</h3>
-          <button class="btn btn--secondary btn--full" id="export-btn">
-            ⬇ Export JSON
-          </button>
-          <button class="btn btn--secondary btn--full" id="import-btn">
-            ⬆ Import JSON
-          </button>
-          <input type="file" id="import-file" accept=".json" hidden />
+        <div class="side-section">
+          <h3 class="side-title">Data</h3>
+          <button class="sec-btn full-btn" id="exportBtn">⬇ Export JSON</button>
+          <button class="sec-btn full-btn" id="importBtn">⬆ Import JSON</button>
+          <input type="file" id="importFile" accept=".json" hidden />
         </div>
       </aside>
 
-      <!-- Main Content -->
       <main class="app-main" aria-label="Tasks area">
-        <!-- Toolbar -->
-        <div class="app-toolbar">
-          <div class="app-toolbar__left">
-            <h2 class="app-toolbar__title" id="current-view-title">
-              All Tasks
-            </h2>
-            <span class="task-count" id="visible-task-count">0 tasks</span>
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <h2 class="view-title" id="viewTitle">All Tasks</h2>
+            <span class="task-count" id="taskCount">0 tasks</span>
           </div>
-
-          <div class="app-toolbar__right">
-            <!-- Sort -->
-            <select
-              class="form-select"
-              id="sort-select"
-              aria-label="Sort tasks"
-            >
+          <div class="toolbar-right">
+            <select class="sort-select" id="sortSelect" aria-label="Sort tasks">
               <option value="created-desc">Newest first</option>
               <option value="created-asc">Oldest first</option>
               <option value="due-asc">Due date (earliest)</option>
@@ -249,29 +178,21 @@
               <option value="alpha-desc">Z → A</option>
             </select>
 
-            <!-- View Toggle -->
-            <div class="view-toggle" role="group" aria-label="View mode">
+            <div class="view-btns" role="group" aria-label="View mode">
               <button
-                class="view-btn view-btn--active"
-                id="view-list"
+                class="view-btn active"
+                id="listViewBtn"
                 aria-label="List view"
-                title="List view"
               >
                 ☰
               </button>
-              <button
-                class="view-btn"
-                id="view-grid"
-                aria-label="Grid view"
-                title="Grid view"
-              >
+              <button class="view-btn" id="gridViewBtn" aria-label="Grid view">
                 ⊞
               </button>
               <button
                 class="view-btn"
-                id="view-kanban"
+                id="kanbanViewBtn"
                 aria-label="Kanban view"
-                title="Kanban view"
               >
                 ⬜
               </button>
@@ -279,82 +200,65 @@
           </div>
         </div>
 
-        <!-- Task Views -->
-
-        <!-- List View -->
-        <div class="task-view task-view--list" id="list-view">
-          <div class="task-list" id="task-list" aria-label="Task list">
-            <!-- Populated by JS -->
+        <!-- list view -->
+        <div class="task-view" id="listView">
+          <div class="task-list" id="taskList" aria-label="Task list">
+            <!-- filled by js -->
           </div>
-          <!-- Empty State -->
-          <div class="empty-state" id="empty-state-list">
-            <div class="empty-state__icon">📋</div>
-            <h3 class="empty-state__title">No tasks yet</h3>
-            <p class="empty-state__message">
+          <div class="empty-box" id="emptyList">
+            <div class="empty-icon">📋</div>
+            <h3 class="empty-title">No tasks yet</h3>
+            <p class="empty-msg">
               Click "+ Add Task" to create your first task
             </p>
-            <button class="btn btn--primary" id="empty-add-task-btn">
-              + Add Task
-            </button>
+            <button class="main-btn" id="emptyAddBtn">+ Add Task</button>
           </div>
         </div>
 
-        <!-- Grid View -->
-        <div class="task-view task-view--grid task-view--hidden" id="grid-view">
-          <div class="task-grid" id="task-grid" aria-label="Task grid">
-            <!-- Populated by JS -->
+        <!-- grid view -->
+        <div class="task-view hidden" id="gridView">
+          <div class="task-grid" id="taskGrid" aria-label="Task grid">
+            <!-- filled by js -->
           </div>
-          <div class="empty-state" id="empty-state-grid">
-            <div class="empty-state__icon">⊞</div>
-            <h3 class="empty-state__title">No tasks yet</h3>
-            <p class="empty-state__message">
+          <div class="empty-box" id="emptyGrid">
+            <div class="empty-icon">⊞</div>
+            <h3 class="empty-title">No tasks yet</h3>
+            <p class="empty-msg">
               Click "+ Add Task" to create your first task
             </p>
           </div>
         </div>
 
-        <!-- Kanban View -->
-        <div
-          class="task-view task-view--kanban task-view--hidden"
-          id="kanban-view"
-        >
-          <div class="kanban-board" id="kanban-board" aria-label="Kanban board">
-            <!-- Todo Column -->
-            <div class="kanban-column" id="kanban-todo">
-              <div class="kanban-column__header">
-                <h3 class="kanban-column__title">📋 Todo</h3>
-                <span class="kanban-column__count" id="kanban-count-todo"
-                  >0</span
-                >
+        <!-- kanban view -->
+        <div class="task-view hidden" id="kanbanView">
+          <div class="kanban-board" id="kanbanBoard" aria-label="Kanban board">
+            <div class="kanban-col" id="kanbanTodo">
+              <div class="col-header">
+                <h3 class="col-title">📋 Todo</h3>
+                <span class="col-count" id="kanbanCountTodo">0</span>
               </div>
-              <div class="kanban-column__body" id="kanban-list-todo">
-                <!-- Populated by JS -->
+              <div class="col-body" id="kanbanListTodo">
+                <!-- filled by js -->
               </div>
             </div>
 
-            <!-- In Progress Column -->
-            <div class="kanban-column" id="kanban-inprogress">
-              <div class="kanban-column__header">
-                <h3 class="kanban-column__title">⚡ In Progress</h3>
-                <span class="kanban-column__count" id="kanban-count-inprogress"
-                  >0</span
-                >
+            <div class="kanban-col" id="kanbanProgress">
+              <div class="col-header">
+                <h3 class="col-title">⚡ In Progress</h3>
+                <span class="col-count" id="kanbanCountProgress">0</span>
               </div>
-              <div class="kanban-column__body" id="kanban-list-inprogress">
-                <!-- Populated by JS -->
+              <div class="col-body" id="kanbanListProgress">
+                <!-- filled by js -->
               </div>
             </div>
 
-            <!-- Completed Column -->
-            <div class="kanban-column" id="kanban-completed">
-              <div class="kanban-column__header">
-                <h3 class="kanban-column__title">✅ Completed</h3>
-                <span class="kanban-column__count" id="kanban-count-completed"
-                  >0</span
-                >
+            <div class="kanban-col" id="kanbanDone">
+              <div class="col-header">
+                <h3 class="col-title">✅ Completed</h3>
+                <span class="col-count" id="kanbanCountDone">0</span>
               </div>
-              <div class="kanban-column__body" id="kanban-list-completed">
-                <!-- Populated by JS -->
+              <div class="col-body" id="kanbanListDone">
+                <!-- filled by js -->
               </div>
             </div>
           </div>
@@ -362,74 +266,62 @@
       </main>
     </div>
 
-    <!-- ===== MODALS ===== -->
-
-    <!-- Add / Edit Task Modal -->
-    <div class="modal-overlay" id="task-modal-overlay" aria-hidden="true">
+    <!-- add/edit task modal -->
+    <div class="modal-overlay hidden" id="taskModalOverlay" aria-hidden="true">
       <div
-        class="modal"
-        id="task-modal"
+        class="modal-box"
+        id="taskModal"
         role="dialog"
         aria-modal="true"
-        aria-labelledby="task-modal-title"
+        aria-labelledby="taskModalTitle"
       >
-        <div class="modal__header">
-          <h2 class="modal__title" id="task-modal-title">Add Task</h2>
+        <div class="modal-head">
+          <h2 class="modal-title" id="taskModalTitle">Add Task</h2>
           <button
-            class="modal__close"
-            id="task-modal-close"
+            class="close-btn"
+            id="taskModalClose"
             aria-label="Close modal"
           >
             ✕
           </button>
         </div>
 
-        <div class="modal__body">
-          <form id="task-form" novalidate>
-            <!-- Title -->
-            <div class="form-group">
-              <label for="task-title" class="form-label"
+        <div class="modal-body">
+          <form id="taskForm" novalidate>
+            <div class="input-group">
+              <label for="taskTitle" class="input-label"
                 >Title <span class="required">*</span></label
               >
               <input
                 type="text"
-                id="task-title"
-                class="form-input"
+                id="taskTitle"
+                class="input-field"
                 placeholder="Task title"
                 required
               />
-              <span
-                class="form-error"
-                id="task-title-error"
-                aria-live="polite"
-              ></span>
+              <span class="err-msg" id="taskTitleErr" aria-live="polite"></span>
             </div>
 
-            <!-- Description -->
-            <div class="form-group">
-              <label for="task-description" class="form-label"
-                >Description</label
-              >
+            <div class="input-group">
+              <label for="taskDesc" class="input-label">Description</label>
               <textarea
-                id="task-description"
-                class="form-textarea"
+                id="taskDesc"
+                class="input-textarea"
                 placeholder="Add a description..."
                 rows="3"
               ></textarea>
             </div>
 
-            <!-- Category & Priority -->
-            <div class="form-row">
-              <div class="form-group">
-                <label for="task-category" class="form-label">Category</label>
-                <select id="task-category" class="form-select">
+            <div class="two-col">
+              <div class="input-group">
+                <label for="taskCategory" class="input-label">Category</label>
+                <select id="taskCategory" class="input-select">
                   <option value="">No category</option>
-                  <!-- Populated by JS -->
                 </select>
               </div>
-              <div class="form-group">
-                <label for="task-priority" class="form-label">Priority</label>
-                <select id="task-priority" class="form-select">
+              <div class="input-group">
+                <label for="taskPriority" class="input-label">Priority</label>
+                <select id="taskPriority" class="input-select">
                   <option value="low">🟢 Low</option>
                   <option value="medium" selected>🟡 Medium</option>
                   <option value="high">🔴 High</option>
@@ -437,15 +329,14 @@
               </div>
             </div>
 
-            <!-- Due Date & Status -->
-            <div class="form-row">
-              <div class="form-group">
-                <label for="task-due-date" class="form-label">Due Date</label>
-                <input type="date" id="task-due-date" class="form-input" />
+            <div class="two-col">
+              <div class="input-group">
+                <label for="taskDueDate" class="input-label">Due Date</label>
+                <input type="date" id="taskDueDate" class="input-field" />
               </div>
-              <div class="form-group">
-                <label for="task-status" class="form-label">Status</label>
-                <select id="task-status" class="form-select">
+              <div class="input-group">
+                <label for="taskStatus" class="input-label">Status</label>
+                <select id="taskStatus" class="input-select">
                   <option value="todo">📋 Todo</option>
                   <option value="inprogress">⚡ In Progress</option>
                   <option value="completed">✅ Completed</option>
@@ -453,137 +344,125 @@
               </div>
             </div>
 
-            <!-- Tags -->
-            <div class="form-group">
-              <label for="task-tags" class="form-label">Tags</label>
+            <div class="input-group">
+              <label for="taskTags" class="input-label">Tags</label>
               <input
                 type="text"
-                id="task-tags"
-                class="form-input"
-                placeholder="Add tags separated by commas (e.g. urgent, work, personal)"
+                id="taskTags"
+                class="input-field"
+                placeholder="urgent, work, personal"
               />
-              <div class="tags-preview" id="tags-preview"></div>
+              <div class="tags-preview" id="tagsPreview"></div>
             </div>
 
-            <input type="hidden" id="task-id" value="" />
+            <input type="hidden" id="taskId" value="" />
           </form>
         </div>
 
-        <div class="modal__footer">
-          <button class="btn btn--ghost" id="task-modal-cancel">Cancel</button>
-          <button class="btn btn--primary" id="task-form-submit">
-            Add Task
-          </button>
+        <div class="modal-foot">
+          <button class="ghost-btn" id="taskModalCancel">Cancel</button>
+          <button class="main-btn" id="taskFormSubmit">Add Task</button>
         </div>
       </div>
     </div>
 
-    <!-- Delete Confirmation Modal -->
-    <div class="modal-overlay" id="delete-modal-overlay" aria-hidden="true">
+    <!-- delete modal -->
+    <div
+      class="modal-overlay hidden"
+      id="deleteModalOverlay"
+      aria-hidden="true"
+    >
       <div
-        class="modal modal--sm"
-        id="delete-modal"
+        class="modal-box small-modal"
+        id="deleteModal"
         role="dialog"
         aria-modal="true"
-        aria-labelledby="delete-modal-title"
+        aria-labelledby="deleteModalTitle"
       >
-        <div class="modal__header">
-          <h2 class="modal__title" id="delete-modal-title">Delete Task</h2>
+        <div class="modal-head">
+          <h2 class="modal-title" id="deleteModalTitle">Delete Task</h2>
           <button
-            class="modal__close"
-            id="delete-modal-close"
+            class="close-btn"
+            id="deleteModalClose"
             aria-label="Close modal"
           >
             ✕
           </button>
         </div>
-        <div class="modal__body">
-          <p class="modal__text">
+        <div class="modal-body">
+          <p class="modal-txt">
             Are you sure you want to delete
-            <strong id="delete-task-name"></strong>? This action cannot be
-            undone.
+            <strong id="deleteTaskName"></strong>? This cannot be undone.
           </p>
         </div>
-        <div class="modal__footer">
-          <button class="btn btn--ghost" id="delete-cancel">Cancel</button>
-          <button class="btn btn--danger" id="delete-confirm">Delete</button>
+        <div class="modal-foot">
+          <button class="ghost-btn" id="deleteCancelBtn">Cancel</button>
+          <button class="danger-btn" id="deleteConfirmBtn">Delete</button>
         </div>
       </div>
     </div>
 
-    <!-- Add Category Modal -->
-    <div class="modal-overlay" id="category-modal-overlay" aria-hidden="true">
+    <!-- category modal -->
+    <div class="modal-overlay hidden" id="catModalOverlay" aria-hidden="true">
       <div
-        class="modal modal--sm"
-        id="category-modal"
+        class="modal-box small-modal"
+        id="catModal"
         role="dialog"
         aria-modal="true"
-        aria-labelledby="category-modal-title"
+        aria-labelledby="catModalTitle"
       >
-        <div class="modal__header">
-          <h2 class="modal__title" id="category-modal-title">Add Category</h2>
-          <button
-            class="modal__close"
-            id="category-modal-close"
-            aria-label="Close modal"
-          >
+        <div class="modal-head">
+          <h2 class="modal-title" id="catModalTitle">Add Category</h2>
+          <button class="close-btn" id="catModalClose" aria-label="Close modal">
             ✕
           </button>
         </div>
-        <div class="modal__body">
-          <form id="category-form" novalidate>
-            <div class="form-group">
-              <label for="category-name" class="form-label"
-                >Category Name <span class="required">*</span></label
+        <div class="modal-body">
+          <form id="catForm" novalidate>
+            <div class="input-group">
+              <label for="catName" class="input-label"
+                >Name <span class="required">*</span></label
               >
               <input
                 type="text"
-                id="category-name"
-                class="form-input"
-                placeholder="e.g. Work, Personal, Shopping"
+                id="catName"
+                class="input-field"
+                placeholder="e.g. Work, Personal"
                 required
               />
-              <span
-                class="form-error"
-                id="category-name-error"
-                aria-live="polite"
-              ></span>
+              <span class="err-msg" id="catNameErr" aria-live="polite"></span>
             </div>
-            <div class="form-group">
-              <label for="category-color" class="form-label">Color</label>
+            <div class="input-group">
+              <label for="catColor" class="input-label">Color</label>
               <input
                 type="color"
-                id="category-color"
-                class="form-input form-input--color"
+                id="catColor"
+                class="color-input"
                 value="#6366f1"
               />
             </div>
           </form>
         </div>
-        <div class="modal__footer">
-          <button class="btn btn--ghost" id="category-modal-cancel">
-            Cancel
-          </button>
-          <button class="btn btn--primary" id="category-form-submit">
-            Add Category
-          </button>
+        <div class="modal-foot">
+          <button class="ghost-btn" id="catModalCancel">Cancel</button>
+          <button class="main-btn" id="catFormSubmit">Add Category</button>
         </div>
       </div>
     </div>
 
-    <!-- Toast Notification -->
+    <!-- toasts -->
     <div
-      class="toast-container"
-      id="toast-container"
+      class="toast-wrap"
+      id="toastWrap"
       aria-live="polite"
       aria-atomic="true"
     >
-      <!-- Populated by JS -->
+      <!-- filled by js -->
     </div>
 
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loading-overlay" aria-hidden="true">
-      <div class="loading-spinner"></div>
+    <!-- loading -->
+    <div class="loading-screen hidden" id="loadingScreen" aria-hidden="true">
+      <div class="spinner"></div>
     </div>
 
     <script type="module" src="/src/main.ts"></script>

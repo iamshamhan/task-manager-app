@@ -3,247 +3,209 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Task Manager App - Organize your tasks efficiently"
-    />
+    <meta name="description" content="Task Manager App - Login or Register" />
     <meta name="author" content="Task Manager" />
     <title>Task Manager | Login</title>
     <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body>
-    <!-- Header -->
-    <header class="auth-header">
-      <div class="auth-header__logo">
-        <span class="auth-header__icon">✓</span>
-        <h1 class="auth-header__title">TaskManager</h1>
+    <header class="top-header">
+      <div class="logo-div">
+        <span class="logo-icon">✓</span>
+        <h1 class="app-name">TaskManager</h1>
       </div>
     </header>
 
-    <!-- Main Auth Container -->
     <main class="auth-main">
-      <div class="auth-card">
-        <!-- Tabs -->
-        <div class="auth-tabs">
-          <button
-            class="auth-tab auth-tab--active"
-            id="tab-login"
-            aria-selected="true"
-          >
+      <div class="auth-box">
+        <div class="tab-btns">
+          <button class="tab-btn active" id="loginTab" aria-selected="true">
             Login
           </button>
-          <button class="auth-tab" id="tab-register" aria-selected="false">
+          <button class="tab-btn" id="registerTab" aria-selected="false">
             Register
           </button>
         </div>
 
-        <!-- Login Form -->
-        <section class="auth-form" id="form-login" aria-label="Login form">
-          <h2 class="auth-form__title">Welcome back</h2>
-          <p class="auth-form__subtitle">Login to access your tasks</p>
+        <!-- login form -->
+        <section class="form-box" id="loginForm" aria-label="Login form">
+          <h2 class="form-title">Welcome back</h2>
+          <p class="form-sub">Login to access your tasks</p>
 
           <form id="login-form" novalidate>
-            <div class="form-group">
-              <label for="login-email" class="form-label">Email</label>
+            <div class="input-group">
+              <label for="loginEmail" class="input-label">Email</label>
               <input
                 type="email"
-                id="login-email"
+                id="loginEmail"
                 name="email"
-                class="form-input"
+                class="input-field"
                 placeholder="you@example.com"
                 autocomplete="email"
                 required
               />
               <span
-                class="form-error"
-                id="login-email-error"
+                class="err-msg"
+                id="loginEmailErr"
                 aria-live="polite"
               ></span>
             </div>
 
-            <div class="form-group">
-              <label for="login-password" class="form-label">Password</label>
-              <div class="input-wrapper">
+            <div class="input-group">
+              <label for="loginPassword" class="input-label">Password</label>
+              <div class="input-wrap">
                 <input
                   type="password"
-                  id="login-password"
+                  id="loginPassword"
                   name="password"
-                  class="form-input"
+                  class="input-field"
                   placeholder="Enter your password"
                   autocomplete="current-password"
                   required
                 />
                 <button
                   type="button"
-                  class="input-toggle"
-                  id="toggle-login-password"
+                  class="show-pass"
+                  id="toggleLoginPass"
                   aria-label="Show password"
                 >
                   👁
                 </button>
               </div>
-              <span
-                class="form-error"
-                id="login-password-error"
-                aria-live="polite"
-              ></span>
+              <span class="err-msg" id="loginPassErr" aria-live="polite"></span>
             </div>
 
-            <button
-              type="submit"
-              class="btn btn--primary btn--full"
-              id="login-submit"
-            >
+            <button type="submit" class="submit-btn" id="loginBtn">
               Login
             </button>
           </form>
 
-          <p class="auth-switch">
+          <p class="switch-txt">
             Don't have an account?
-            <button class="auth-switch__btn" id="go-to-register">
-              Register here
-            </button>
+            <button class="switch-btn" id="goToRegister">Register here</button>
           </p>
         </section>
 
-        <!-- Register Form -->
+        <!-- register form -->
         <section
-          class="auth-form auth-form--hidden"
-          id="form-register"
+          class="form-box hidden"
+          id="registerForm"
           aria-label="Register form"
         >
-          <h2 class="auth-form__title">Create account</h2>
-          <p class="auth-form__subtitle">Start managing your tasks today</p>
+          <h2 class="form-title">Create account</h2>
+          <p class="form-sub">Start managing your tasks today</p>
 
           <form id="register-form" novalidate>
-            <div class="form-group">
-              <label for="register-username" class="form-label">Username</label>
+            <div class="input-group">
+              <label for="regUsername" class="input-label">Username</label>
               <input
                 type="text"
-                id="register-username"
+                id="regUsername"
                 name="username"
-                class="form-input"
+                class="input-field"
                 placeholder="Your name"
                 autocomplete="username"
                 required
               />
               <span
-                class="form-error"
-                id="register-username-error"
+                class="err-msg"
+                id="regUsernameErr"
                 aria-live="polite"
               ></span>
             </div>
 
-            <div class="form-group">
-              <label for="register-email" class="form-label">Email</label>
+            <div class="input-group">
+              <label for="regEmail" class="input-label">Email</label>
               <input
                 type="email"
-                id="register-email"
+                id="regEmail"
                 name="email"
-                class="form-input"
+                class="input-field"
                 placeholder="you@example.com"
                 autocomplete="email"
                 required
               />
-              <span
-                class="form-error"
-                id="register-email-error"
-                aria-live="polite"
-              ></span>
+              <span class="err-msg" id="regEmailErr" aria-live="polite"></span>
             </div>
 
-            <div class="form-group">
-              <label for="register-password" class="form-label">Password</label>
-              <div class="input-wrapper">
+            <div class="input-group">
+              <label for="regPassword" class="input-label">Password</label>
+              <div class="input-wrap">
                 <input
                   type="password"
-                  id="register-password"
+                  id="regPassword"
                   name="password"
-                  class="form-input"
+                  class="input-field"
                   placeholder="Create a password"
                   autocomplete="new-password"
                   required
                 />
                 <button
                   type="button"
-                  class="input-toggle"
-                  id="toggle-register-password"
+                  class="show-pass"
+                  id="toggleRegPass"
                   aria-label="Show password"
                 >
                   👁
                 </button>
               </div>
-              <span
-                class="form-error"
-                id="register-password-error"
-                aria-live="polite"
-              ></span>
+              <span class="err-msg" id="regPassErr" aria-live="polite"></span>
 
-              <!-- Password Strength Indicator -->
-              <div class="password-strength" id="password-strength">
-                <div class="password-strength__bars">
-                  <span class="strength-bar" id="bar-1"></span>
-                  <span class="strength-bar" id="bar-2"></span>
-                  <span class="strength-bar" id="bar-3"></span>
-                  <span class="strength-bar" id="bar-4"></span>
+              <div class="pass-strength" id="passStrength">
+                <div class="strength-bars">
+                  <span class="bar" id="bar1"></span>
+                  <span class="bar" id="bar2"></span>
+                  <span class="bar" id="bar3"></span>
+                  <span class="bar" id="bar4"></span>
                 </div>
-                <span class="password-strength__label" id="strength-label"
-                  >Too short</span
-                >
+                <span class="strength-txt" id="strengthTxt">Too short</span>
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="register-confirm-password" class="form-label"
+            <div class="input-group">
+              <label for="regConfirmPass" class="input-label"
                 >Confirm Password</label
               >
-              <div class="input-wrapper">
+              <div class="input-wrap">
                 <input
                   type="password"
-                  id="register-confirm-password"
+                  id="regConfirmPass"
                   name="confirmPassword"
-                  class="form-input"
+                  class="input-field"
                   placeholder="Repeat your password"
                   autocomplete="new-password"
                   required
                 />
                 <button
                   type="button"
-                  class="input-toggle"
-                  id="toggle-confirm-password"
+                  class="show-pass"
+                  id="toggleConfirmPass"
                   aria-label="Show password"
                 >
                   👁
                 </button>
               </div>
               <span
-                class="form-error"
-                id="register-confirm-error"
+                class="err-msg"
+                id="regConfirmErr"
                 aria-live="polite"
               ></span>
             </div>
 
-            <button
-              type="submit"
-              class="btn btn--primary btn--full"
-              id="register-submit"
-            >
+            <button type="submit" class="submit-btn" id="registerBtn">
               Create Account
             </button>
           </form>
 
-          <p class="auth-switch">
+          <p class="switch-txt">
             Already have an account?
-            <button class="auth-switch__btn" id="go-to-login">
-              Login here
-            </button>
+            <button class="switch-btn" id="goToLogin">Login here</button>
           </p>
         </section>
       </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="auth-footer">
+    <footer class="bottom-footer">
       <p>© 2026 TaskManager. All rights reserved.</p>
     </footer>
 
