@@ -1,0 +1,231 @@
+/* ===== AUTH PAGE LAYOUT ===== */
+.top-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.logo-div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  background: var(--primary);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.app-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.auth-main {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.auth-box {
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+}
+
+/* ===== TABS ===== */
+.tab-btns {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--trans);
+  border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover {
+  color: var(--text);
+  background: var(--bg);
+}
+
+.tab-btn.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  background: var(--bg-white);
+}
+
+/* ===== FORM BOX ===== */
+.form-box {
+  padding: 28px;
+}
+
+.form-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.form-sub {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--trans);
+  margin-top: 8px;
+}
+
+.submit-btn:hover {
+  background: var(--primary-dark);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* ===== SWITCH TEXT ===== */
+.switch-txt {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 20px;
+}
+
+.switch-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.switch-btn:hover {
+  text-decoration: underline;
+}
+
+/* ===== PASSWORD STRENGTH ===== */
+.pass-strength {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.strength-bars {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.bar {
+  height: 4px;
+  flex: 1;
+  border-radius: 10px;
+  background: var(--border);
+  transition: var(--trans);
+}
+
+.bar.weak {
+  background: var(--danger);
+}
+
+.bar.fair {
+  background: var(--warning);
+}
+
+.bar.good {
+  background: #3b82f6;
+}
+
+.bar.strong {
+  background: var(--success);
+}
+
+.strength-txt {
+  font-size: 12px;
+  color: var(--text-light);
+  white-space: nowrap;
+}
+
+/* ===== ERROR PAGE ===== */
+.error-page {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.error-box {
+  text-align: center;
+  max-width: 400px;
+}
+
+.error-num {
+  font-size: 96px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.error-emoji {
+  font-size: 48px;
+  margin: 12px 0;
+}
+
+.error-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.error-msg {
+  color: var(--text-light);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.error-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}

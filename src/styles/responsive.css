@@ -1,0 +1,205 @@
+/* ===== TABLET (max 1024px) ===== */
+@media (max-width: 1024px) {
+
+  .kanban-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kanban-col:last-child {
+    grid-column: span 2;
+  }
+
+  .header-mid {
+    max-width: 280px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* ===== MOBILE (max 768px) ===== */
+@media (max-width: 768px) {
+
+  /* header */
+  .app-header {
+    padding: 0 10px;
+  }
+
+  .header-mid {
+    display: none;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  /* sidebar becomes overlay on mobile */
+  .sidebar {
+    left: calc(-1 * var(--sidebar-w));
+    z-index: 150;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* sidebar overlay background */
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 140;
+  }
+
+  .sidebar-overlay.show {
+    display: block;
+  }
+
+  /* main takes full width */
+  .app-main {
+    margin-left: 0;
+    padding: 12px;
+  }
+
+  /* toolbar */
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toolbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sort-select {
+    flex: 1;
+  }
+
+  /* kanban goes single column */
+  .kanban-board {
+    grid-template-columns: 1fr;
+  }
+
+  .kanban-col:last-child {
+    grid-column: span 1;
+  }
+
+  /* task grid single column */
+  .task-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* modals full width */
+  .modal-box {
+    max-width: 100%;
+    margin: 0;
+    border-radius: var(--radius) var(--radius) 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 90vh;
+  }
+
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  /* auth box */
+  .auth-box {
+    max-width: 100%;
+  }
+
+  .auth-main {
+    padding: 20px 12px;
+    align-items: flex-start;
+  }
+
+  /* toast */
+  .toast-wrap {
+    left: 16px;
+    right: 16px;
+    max-width: 100%;
+  }
+
+  /* stats */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* error page */
+  .error-num {
+    font-size: 64px;
+  }
+
+  .error-btns {
+    flex-direction: column;
+  }
+
+  /* profile */
+  .profile-box {
+    margin: 20px 12px;
+  }
+
+}
+
+/* ===== SMALL MOBILE (max 480px) ===== */
+@media (max-width: 480px) {
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-title {
+    font-size: 18px;
+  }
+
+  .form-box {
+    padding: 20px 16px;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .card-actions {
+    opacity: 1;
+  }
+
+  .view-title {
+    font-size: 16px;
+  }
+
+  .error-num {
+    font-size: 56px;
+  }
+
+}
+
+/* ===== VERY SMALL (max 320px) ===== */
+@media (max-width: 320px) {
+
+  .tab-btn {
+    font-size: 13px;
+    padding: 10px 8px;
+  }
+
+  .app-name {
+    font-size: 16px;
+  }
+
+  .modal-title {
+    font-size: 15px;
+  }
+
+}
